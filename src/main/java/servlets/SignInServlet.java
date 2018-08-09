@@ -20,8 +20,8 @@ public class SignInServlet extends HttpServlet {
 
         boolean loggedIn = accountService.signIn(login, password);
         response.setContentType("text/html; charset=utf-8");
-        if (loggedIn) {
-            response.getWriter().print("Authorized");
+        if (loggedIn ) {
+            response.getWriter().print("Authorized: " + login);
             response.setStatus(HttpServletResponse.SC_OK);
         } else {
             response.getWriter().print("Unauthorized");
